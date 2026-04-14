@@ -10,14 +10,14 @@
 
 This project, developed in partnership with **The Aerospace Corporation**, explores the application of machine learning to automate the detection and classification of radio frequency (RF) interference signals. As wireless communication technologies expand, RF interference poses increasingly disruptive challenges, particularly for systems reliant on accurate satellite-based navigation like GPS and GNSS constellations. Monitoring RF environments manually is difficult due to the volume and complexity of the data, which motivated our approach to use deep learning pipelines.
 
-| Field | Description |
-|---|---|
-| **Project Name** | RF Interference |
-| **Corporate Partner** | The Aerospace Corporation |
-| **Student Team (Development Team)** | Eubene In, Ashmit Tendolkar, Vineet Rao, Rex Wu, Ronak Mohanty, Adarsh Rangayyan, Tushar Bhat, Sreya Etherajan  |
-| **Teaching Assistant (Scrum Master)** | William Yu |
-| **Corporate Partner Mentor(s) (Product Owner(s))** | Kyle Logue, Anson Lim |
-| **Project Semester(s)** | Fall 205, Spring 2026 |
+| Field                                              | Description                                                                                                    |
+| -------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| **Project Name**                                   | RF Interference                                                                                                |
+| **Corporate Partner**                              | The Aerospace Corporation                                                                                      |
+| **Student Team (Development Team)**                | Eubene In, Ashmit Tendolkar, Vineet Rao, Rex Wu, Ronak Mohanty, Adarsh Rangayyan, Tushar Bhat, Sreya Etherajan |
+| **Teaching Assistant (Scrum Master)**              | William Yu                                                                                                     |
+| **Corporate Partner Mentor(s) (Product Owner(s))** | Kyle Logue, Anson Lim                                                                                          |
+| **Project Semester(s)**                            | Fall 205, Spring 2026                                                                                          |
 
 ---
 
@@ -47,8 +47,6 @@ We developed multiple distinct ML pipelines and successfully constructed an opti
 
 Manually monitoring RF environments is difficult due to the sheer volume and complexity of the signal data. This project demonstrates that machine learning is a promising, scalable approach for automating this detection. Ultimately, it lays the groundwork for systems that support more automated RF monitoring in real-world environments, protecting satellite-based navigation systems (like GPS/GNSS) against safety risks from jamming.
 
-
-
 ---
 
 ## Section 3: Key Achievements
@@ -74,14 +72,6 @@ The code development has been successfully aggregated, with experimental and pri
 
 ### 3.3 Data & Reports Location
 
-> [!WARNING]
-> **TODO:** Fill in if any final reports need a shared link.
-
-**What to write:** Provide the location of datasets, dashboards, reports, or analytical outputs. Use an approved storage platform (e.g., SharePoint, Box, Google Drive).
-
-> **Example:**
-> All processed datasets and final reports are stored in the team SharePoint folder: `[SharePoint link]`
-
 The original Highway2 GNSS Jamming Dataset can be found at: `https://gitlab.cc-asp.fraunhofer.de/darcy_gnss/fiot_highway2`
 
 ---
@@ -94,11 +84,6 @@ Inline documentation has been heavily localized into the individual components. 
 
 ### 3.5 Achievements
 
-> [!WARNING]
-> **TODO:** Check if further achievements need to be mentioned.
-
-**What to write:** Highlight the most important accomplishments. Focus on results or progress, with measurable improvements or insights where possible. Examples include:
-
 - Improvement in model accuracy or analytical performance
 - Development of a working prototype or proof of concept
 - Integration of multiple data sources
@@ -107,18 +92,18 @@ Inline documentation has been heavily localized into the individual components. 
 
 We successfully developed an ensemble approach combining multiple ML architectures. As shown below, our majority voting ensemble outperformed several of the individual architectures, culminating in an overall test set accuracy of 76.91%.
 
-| sample_id | Result | Eubene-AST | Eubene-CNN | Rex | Rex meeting | Rex 3 | Ronak | Majority |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| **Accuracy** | | 0.7791 | 0.7949 | 0.6229 | 0.2512 | 0.2512 | 0.7145 | **0.7691** |
-| 12133 | 8 | 2 | 2 | 2 | 8 | 8 | 2 | 2 |
-| 12821 | 8 | 2 | 2 | 2 | 8 | 8 | 8 | 2 |
-| 8239 | 7 | 2 | 1 | 0 | 7 | 7 | 2 | 2 |
-| 16011 | 5 | 5 | 5 | 4 | 4 | 4 | 5 | 5 |
-| 14592 | 8 | 2 | 2 | 2 | 8 | 8 | 2 | 2 |
-| 2010 | 7 | 7 | 7 | 0 | 7 | 7 | 7 | 7 |
-| 764 | 5 | 5 | 5 | 5 | 5 | 5 | 5 | 5 |
-| 8235 | 7 | 2 | 1 | 0 | 7 | 7 | 2 | 2 |
-| 2803 | 7 | 7 | 7 | 0 | 7 | 7 | 7 | 7 |
+| sample_id    | Result | Eubene-AST | Eubene-CNN | Rex    | Rex meeting | Rex 3  | Ronak  | Majority   |
+| :----------- | :----- | :--------- | :--------- | :----- | :---------- | :----- | :----- | :--------- |
+| **Accuracy** |        | 0.7791     | 0.7949     | 0.6229 | 0.2512      | 0.2512 | 0.7145 | **0.7691** |
+| 12133        | 8      | 2          | 2          | 2      | 8           | 8      | 2      | 2          |
+| 12821        | 8      | 2          | 2          | 2      | 8           | 8      | 8      | 2          |
+| 8239         | 7      | 2          | 1          | 0      | 7           | 7      | 2      | 2          |
+| 16011        | 5      | 5          | 5          | 4      | 4           | 4      | 5      | 5          |
+| 14592        | 8      | 2          | 2          | 2      | 8           | 8      | 2      | 2          |
+| 2010         | 7      | 7          | 7          | 0      | 7           | 7      | 7      | 7          |
+| 764          | 5      | 5          | 5          | 5      | 5           | 5      | 5      | 5          |
+| 8235         | 7      | 2          | 1          | 0      | 7           | 7      | 2      | 2          |
+| 2803         | 7      | 7          | 7          | 0      | 7           | 7      | 7      | 7          |
 
 ---
 
@@ -128,15 +113,11 @@ Reflects on the project experience and documents insights for future teams. Focu
 
 ### 4.1 Challenges Encountered
 
-> [!WARNING]
-> **TODO:** Verify if additional challenges below apply.
-
 The primary challenges were the sheer volume and complexity of the raw RF spectrum data and the severe imbalance in the Highway2 GNSS Jamming Dataset.
 
 - Limited or inconsistent data availability
 - Unexpected technical difficulties or model performance issues
-- Integration challenges between tools or systems
-- Coordination or communication challenges within the team or with the corporate partner
+- Reliable Access to GPU's
 
 ---
 
@@ -159,11 +140,6 @@ To address the data imbalance, we utilized SMOTE to generate fake samples for mi
 Summarizes how the project is concluded and how results may be continued in the future. Confirms that materials are organized for mentor handover.
 
 ### 5.1 Handover Summary
-
-> [!WARNING]
-> **TODO:** Insert links to materials or confirm mentor access.
-
-**What to write:** Briefly describe how final results, deliverables, and documentation were shared with mentor(s). Examples include:
 
 - Final presentation or demonstration to mentors
 - Walkthrough of the repository or documentation
@@ -192,7 +168,7 @@ Confirm that key materials have been prepared and shared. Mark all items that ap
 
 - **Proper Ensembling Integration:** Finalizing and optimizing a permanent single deployment pipeline that automatically aggregates voting decisions across all distinct models seamlessly.
 - **Continuing Class Imbalance Research:** Conducting rigorous subsequent analyses on synthetic data creation techniques (GANs, modified SMOTE implementations) due to persistent representation issues in the Highway2 baseline.
-- **Model Pruning and Deployment Profiling:** Aggressively applying pruning techniques to decrease model byte-size and directly increase inference processing speeds speeds, enabling real-time detection thresholds suitable for live hardware edge environments.
+- **Model Pruning and Deployment Profiling:** Aggressively applying pruning techniques to decrease model byte-size and directly increase inference processing speeds, enabling real-time detection thresholds suitable for live hardware edge environments.
 
 ---
 
@@ -200,15 +176,15 @@ Confirm that key materials have been prepared and shared. Mark all items that ap
 
 This section confirms that project results and deliverables have been reviewed by the corporate partner or mentor, representing formal acknowledgement that the project work has been completed and shared.
 
-| Role | Name | Date | Signature |
-|---|---|---|---|
-| Corporate Partner Mentor | | | |
-| Teaching Assistant | | | |
-| Team Lead / Representative | | | |
+| Role                       | Name | Date | Signature |
+| -------------------------- | ---- | ---- | --------- |
+| Corporate Partner Mentor   |      |      |           |
+| Teaching Assistant         |      |      |           |
+| Team Lead / Representative |      |      |           |
 
 ---
 
-### 5.5 Additional Notes *(Optional)*
+### 5.5 Additional Notes _(Optional)_
 
 Any other important information that does not fall under the sections above.
 
