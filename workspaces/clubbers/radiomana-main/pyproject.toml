@@ -1,0 +1,86 @@
+[project]
+name = "radiomana"
+description = "Creating Realistic Artificial Backgrounds"
+keywords = ["dsp", "sigint", "rf", "ml", "gps", "jamming", "radio"]
+dynamic = ["version", "readme"]
+authors = [
+    {name = "Kyle Logue", email = "kyle.logue@aero.org"},
+    {name = "Anson Lam", email = "anson.lam@aero.org"},
+]
+requires-python = ">=3.8"
+dependencies = [
+    "torch",            # ml framework
+    "numpy",            # vector math
+    "einops",           # matrix operations
+    "lightning",        # training framework
+    "torchmetrics",     # metrics
+    "scikit-learn",     # data handling
+    "torchvision",      # for classic model architectures
+]
+    [project.optional-dependencies]
+    test = [
+        "attrs >= 21.4.0", # minimum version for pytype
+        "pylint",
+        "pytest",
+        "pytest-cov",
+        "pytype",       # type checking
+        "coverage",     # runs code coverage
+        "hypothesis",   # next-gen testing framework
+    ]
+
+[tool.setuptools]
+packages = ["radiomana"]
+[tool.setuptools.dynamic]
+version = {attr = "radiomana.__version__"}
+readme = {file = ["README.md"], content-type = "text/markdown"}
+
+[build-system]
+requires = ["setuptools>=65.0", "setuptools-scm"]
+build-backend = "setuptools.build_meta"
+
+[tool.coverage.run]
+branch = true
+source = ["radiomana", "tests"]
+# -rA captures stdout from all tests and places it after the pytest summary
+command_line = "-m pytest -rA --doctest-modules --junitxml=pytest.xml"
+
+[tool.pytest.ini_options]
+addopts = "--doctest-modules"
+testpaths = ["radiomana", "tests"]
+log_cli = true
+log_cli_level = "INFO"
+log_cli_format = "%(levelname)-8s %(filename)s:%(lineno)s %(message)s"
+
+[tool.pylint]
+    [tool.pylint.main]
+    load-plugins = [
+        "pylint.extensions.typing",
+        "pylint.extensions.docparams",
+    ]
+    exit-zero = true
+    [tool.pylint.messages_control]
+    disable = [
+        "logging-not-lazy",
+        "missing-module-docstring",
+        "import-error",
+        "unspecified-encoding",
+        "no-member",
+        "logging-fstring-interpolation", # allow f-string logs
+    ]
+    max-line-length = 120
+    [tool.pylint.REPORTS]
+    # omit from the similarity reports
+    ignore-comments = "yes"
+    ignore-docstrings = "yes"
+    ignore-imports = "yes"
+    ignore-signatures = "yes"
+    min-similarity-lines = 4
+
+[tool.pytype]
+inputs = ["radiomana", "tests"]
+
+[tool.isort]
+profile = "black"
+
+[tool.black]
+line-length = 120

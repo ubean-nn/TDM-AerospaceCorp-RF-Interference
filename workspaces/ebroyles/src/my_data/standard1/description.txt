@@ -1,0 +1,14 @@
+Variant: standard
+
+Dataset Summary
+----------------
+Number of features : 1344
+Total train samples: 12915
+Total test samples : 3296
+Total samples      : 16211
+
+Spectogram -> Features
+----------------------
+Pre-processing   : flip_specto, resize_specto
+Feature extract  : mean, mean, std, std, median, median, min, min, max, max, minloc, minloc, maxloc, maxloc
+Normalization    : norm0to1

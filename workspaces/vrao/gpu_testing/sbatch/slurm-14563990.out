@@ -1,0 +1,18 @@
+Lmod has detected the following error: The following module(s) are unknown: "modtree/cpu"
+
+Please check the spelling or version number. Also try "module spider ..."
+It is also possible your cache file is out-of-date; it may help to try:
+  $ module --ignore_cache load "modtree/cpu"
+
+Also make sure that all modulefiles written in TCL start with the string #%Module
+
+
+
+torch.cuda.is_available(): True
+Traceback (most recent call last):
+  File "/anvil/projects/x-cis220051/corporate/aerospace-rf/vrao/gpu_testing/sbatch/mini_CNN.py", line 170, in <module>
+    run_training()
+  File "/anvil/projects/x-cis220051/corporate/aerospace-rf/vrao/gpu_testing/sbatch/mini_CNN.py", line 90, in run_training
+    print("Using device:", device)
+                           ^^^^^^
+UnboundLocalError: cannot access local variable 'device' where it is not associated with a value

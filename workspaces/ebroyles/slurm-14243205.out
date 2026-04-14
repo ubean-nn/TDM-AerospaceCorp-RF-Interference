@@ -1,0 +1,15 @@
+Lmod has detected the following error: The following module(s) are unknown:
+"modtree/cpu"
+
+Please check the spelling or version number. Also try "module spider ..."
+It is also possible your cache file is out-of-date; it may help to try:
+  $ module --ignore_cache load "modtree/cpu"
+
+Also make sure that all modulefiles written in TCL start with the string #%Module
+
+
+
+  File "/anvil/projects/x-cis220051/corporate/aerospace-rf/ebroyles/rungpu1.sh", line 15
+    module use /anvil/projects/tdm/opt/core
+           ^^^
+SyntaxError: invalid syntax

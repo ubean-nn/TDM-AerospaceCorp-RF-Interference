@@ -1,0 +1,13 @@
+Lmod has detected the following error: The following module(s) are unknown: "modtree/cpu"
+
+Please check the spelling or version number. Also try "module spider ..."
+It is also possible your cache file is out-of-date; it may help to try:
+  $ module --ignore_cache load "modtree/cpu"
+
+Also make sure that all modulefiles written in TCL start with the string #%Module
+
+
+
+Detected input shape: torch.Size([1, 512, 243])
+Epoch 1/10 (Training):   0%|                                                                          | 0/323 [00:00<?, ?it/s]Epoch 1/10 (Training):   0%|▏                                                                 | 1/323 [00:03<18:23,  3.43s/it]/var/spool/slurm/job14552879/slurm_script: line 17: 2460289 Killed                  python3 mini_CNN.py
+slurmstepd: error: Detected 1 oom_kill event in StepId=14552879.batch. Some of the step tasks have been OOM Killed.

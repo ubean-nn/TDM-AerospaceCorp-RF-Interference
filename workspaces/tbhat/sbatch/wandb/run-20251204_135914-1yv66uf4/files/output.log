@@ -1,0 +1,57 @@
+wandb: logging graph, to disable use `wandb.watch(log_graph=False)`
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+┏━━━┳━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━┳━━━━━━━┓
+┃   ┃ Name         ┃ Type                      ┃ Params ┃ Mode  ┃
+┡━━━╇━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━╇━━━━━━━┩
+│ 0 │ reshape      │ Rearrange                 │      0 │ train │
+│ 1 │ project      │ Conv2d                    │      6 │ train │
+│ 2 │ submodel     │ MobileNetV3               │  5.5 M │ train │
+│ 3 │ head         │ Linear                    │  9.0 K │ train │
+│ 4 │ criterion    │ CrossEntropyLoss          │      0 │ train │
+│ 5 │ test_confmat │ MulticlassConfusionMatrix │      0 │ train │
+│ 6 │ test_f1      │ MulticlassF1Score         │      0 │ train │
+└───┴──────────────┴───────────────────────────┴────────┴───────┘
+Trainable params: 5.5 M
+Non-trainable params: 0
+Total params: 5.5 M
+Total estimated model params size (MB): 21
+Modules in train mode: 261
+Modules in eval mode: 0
+SLURM auto-requeueing enabled. Setting signal handlers.
+`Trainer.fit` stopped: `max_epochs=30` reached.
+Epoch 29/29 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 364/364 0:00:19 • 0:00:00 18.89it/s v_num: 6uf4 train_loss: 0.414 val_loss: 0.593
+rewinding to best checkpoint: ./radiomana-highway/1yv66uf4/checkpoints/highway_baseline-epoch=028-val_loss=0.555750.ckpt
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+SLURM auto-requeueing enabled. Setting signal handlers.
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃        Test metric        ┃       DataLoader 0        ┃
+┡━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━┩
+│         test_acc          │    0.7918689250946045     │
+│          test_f1          │    0.6447032690048218     │
+│         test_loss         │    0.5437320470809937     │
+└───────────────────────────┴───────────────────────────┘
+Testing ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 103/103 0:00:02 • 0:00:00 44.76it/s
+test loss: 0.544
+test f1: 0.645
+test acc:  79.187%
+confusion matrix:
+ tensor([[ 932,   76,   39,    0,    1,    0,    0,    0,    0],
+        [  94,  297,  181,    0,    1,    0,    0,    3,    0],
+        [  34,  178, 1166,    0,    1,    0,    7,    2,    0],
+        [   7,    5,    0,    0,    0,    0,    0,    0,    0],
+        [   0,    4,    0,    0,   40,    0,    0,    0,    0],
+        [   0,    0,    0,    0,    3,   66,    3,    0,    0],
+        [   0,    4,    2,    0,    0,    2,   76,    0,    0],
+        [   0,    3,    4,    0,    0,    0,    0,   33,    0],
+        [   0,    0,   32,    0,    0,    0,    0,    0,    0]],
+       device='cuda:0')
+test per-class accuracy:
+  class 0 (None                  ):  88.931%
+  class 1 (None                  ):  51.562%
+  class 2 (None                  ):  84.006%
+  class 3 (None                  ):   0.000%
+  class 4 (Chirp, high distance  ):  90.909%
+  class 5 (Chirp, medium distance):  91.667%
+  class 6 (Chirp, small distance ):  90.476%
+  class 7 (Cigarette lighter 1   ):  82.500%
+  class 8 (Cigarette lighter 2   ):   0.000%

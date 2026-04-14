@@ -1,0 +1,76 @@
+{
+  "os": "Linux-4.18.0-553.16.1.el8_10.x86_64-x86_64-with-glibc2.39",
+  "python": "CPython 3.12.11",
+  "startedAt": "2025-12-06T01:11:53.956633Z",
+  "program": "/anvil/projects/x-cis220051/corporate/aerospace-rf/tbhat/sbatch/training.py",
+  "codePath": "training.py",
+  "codePathLocal": "training.py",
+  "email": "tusharbhat35@gmail.com",
+  "root": ".",
+  "host": "g001.anvil.rcac.purdue.edu",
+  "executable": "/usr/local/bin/python3",
+  "cpu_count": 128,
+  "cpu_count_logical": 128,
+  "gpu": "NVIDIA A100-SXM4-40GB",
+  "gpu_count": 1,
+  "disk": {
+    "/": {
+      "total": "16777216",
+      "used": "16384"
+    }
+  },
+  "memory": {
+    "total": "540605194240"
+  },
+  "gpu_nvidia": [
+    {
+      "name": "NVIDIA A100-SXM4-40GB",
+      "memoryTotal": "42949672960",
+      "cudaCores": 6912,
+      "architecture": "Ampere",
+      "uuid": "GPU-4142a2f7-5566-21c6-e6f0-2df5b07ae10a"
+    }
+  ],
+  "cudaVersion": "12.6",
+  "slurm": {
+    "cluster_name": "anvil",
+    "conf": "/var/spool/slurm/conf-cache/slurm.conf",
+    "cpus_on_node": "32",
+    "cpus_per_task": "32",
+    "gpus_on_node": "1",
+    "gpus_per_node": "1",
+    "gtids": "0",
+    "job_account": "cis220051-gpu",
+    "job_cpus_per_node": "32",
+    "job_end_time": "1764987092",
+    "job_gid": "7000001",
+    "job_gpus": "1",
+    "job_id": "14563972",
+    "job_name": "rungpu1.sh",
+    "job_nodelist": "g001",
+    "job_num_nodes": "1",
+    "job_partition": "gpu",
+    "job_qos": "gpu",
+    "job_start_time": "1764983492",
+    "job_uid": "7958859",
+    "job_user": "x-tbhat",
+    "jobid": "14563972",
+    "localid": "0",
+    "nnodes": "1",
+    "nodeid": "0",
+    "nodelist": "g001",
+    "nprocs": "1",
+    "ntasks": "1",
+    "prio_process": "0",
+    "procid": "0",
+    "script_context": "prolog_task",
+    "submit_dir": "/anvil/projects/x-cis220051/corporate/aerospace-rf/tbhat/sbatch",
+    "submit_host": "jupyter-x-tbhat",
+    "task_pid": "1153810",
+    "tasks_per_node": "1",
+    "topology_addr": "ibsw[23-32].ibsw1.g001",
+    "topology_addr_pattern": "switch.switch.node",
+    "tres_per_task": "cpu=32"
+  },
+  "writerId": "a5u2ziydf4tmddy001yqbxk1ji5nif3l"
+}

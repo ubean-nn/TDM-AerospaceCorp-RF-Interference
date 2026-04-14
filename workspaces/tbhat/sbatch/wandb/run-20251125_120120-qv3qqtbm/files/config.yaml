@@ -1,0 +1,114 @@
+_wandb:
+    value:
+        cli_version: 0.23.0
+        e:
+            79lhskqnmruozuqv6c2lfaymuvcznp33:
+                codePath: example.py
+                codePathLocal: example.py
+                cpu_count: 128
+                cpu_count_logical: 128
+                cudaVersion: "12.6"
+                disk:
+                    /:
+                        total: "16777216"
+                        used: "16384"
+                email: tusharbhat35@gmail.com
+                executable: /usr/local/bin/python3
+                gpu: NVIDIA A100-SXM4-40GB
+                gpu_count: 1
+                gpu_nvidia:
+                    - architecture: Ampere
+                      cudaCores: 6912
+                      memoryTotal: "42949672960"
+                      name: NVIDIA A100-SXM4-40GB
+                      uuid: GPU-a2a59d48-b8a1-0678-b07c-cf1a24b3dcb6
+                host: g002.anvil.rcac.purdue.edu
+                memory:
+                    total: "540605198336"
+                os: Linux-4.18.0-553.16.1.el8_10.x86_64-x86_64-with-glibc2.39
+                program: /anvil/projects/x-cis220051/corporate/aerospace-rf/tbhat/sbatch/example.py
+                python: CPython 3.12.11
+                root: .
+                slurm:
+                    cluster_name: anvil
+                    conf: /var/spool/slurm/conf-cache/slurm.conf
+                    cpus_on_node: "32"
+                    cpus_per_task: "32"
+                    gpus_on_node: "1"
+                    gpus_per_node: "1"
+                    gtids: "0"
+                    job_account: cis220051-gpu
+                    job_cpus_per_node: "32"
+                    job_end_time: "1764093654"
+                    job_gid: "7000001"
+                    job_gpus: "2"
+                    job_id: "14506675"
+                    job_name: rungpu1.sh
+                    job_nodelist: g002
+                    job_num_nodes: "1"
+                    job_partition: gpu
+                    job_qos: gpu
+                    job_start_time: "1764090054"
+                    job_uid: "7958859"
+                    job_user: x-tbhat
+                    jobid: "14506675"
+                    localid: "0"
+                    nnodes: "1"
+                    nodeid: "0"
+                    nodelist: g002
+                    nprocs: "1"
+                    ntasks: "1"
+                    prio_process: "0"
+                    procid: "0"
+                    script_context: prolog_task
+                    submit_dir: /anvil/projects/x-cis220051/corporate/aerospace-rf/tbhat/sbatch
+                    submit_host: jupyter-x-tbhat
+                    task_pid: "1285255"
+                    tasks_per_node: "1"
+                    topology_addr: ibsw[23-32].ibsw1.g002
+                    topology_addr_pattern: switch.switch.node
+                    tres_per_task: cpu=32
+                startedAt: "2025-11-25T17:01:20.843682Z"
+                writerId: 79lhskqnmruozuqv6c2lfaymuvcznp33
+        m:
+            - "1": trainer/global_step
+              "6":
+                - 3
+              "7": []
+            - "2": '*'
+              "5": 1
+              "6":
+                - 1
+              "7": []
+        python_version: 3.12.11
+        t:
+            "1":
+                - 1
+                - 5
+                - 11
+                - 41
+                - 49
+                - 53
+                - 71
+                - 105
+                - 106
+            "2":
+                - 1
+                - 5
+                - 11
+                - 41
+                - 49
+                - 53
+                - 71
+                - 105
+                - 106
+            "3":
+                - 1
+                - 7
+                - 13
+                - 66
+            "4": 3.12.11
+            "5": 0.23.0
+            "6": 4.57.1
+            "12": 0.23.0
+            "13": linux-x86_64

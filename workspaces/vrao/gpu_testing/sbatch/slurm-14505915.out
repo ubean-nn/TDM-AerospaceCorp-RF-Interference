@@ -1,0 +1,18 @@
+Lmod has detected the following error: The following module(s) are unknown: "modtree/cpu"
+
+Please check the spelling or version number. Also try "module spider ..."
+It is also possible your cache file is out-of-date; it may help to try:
+  $ module --ignore_cache load "modtree/cpu"
+
+Also make sure that all modulefiles written in TCL start with the string #%Module
+
+
+
+Traceback (most recent call last):
+  File "/anvil/projects/x-cis220051/corporate/aerospace-rf/vrao/gpu_testing/sbatch/ml_code.py", line 215, in <module>
+    train_data = HighwayDataset(train_txt, base, noise_std=0.05)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/anvil/projects/x-cis220051/corporate/aerospace-rf/vrao/gpu_testing/sbatch/ml_code.py", line 48, in __init__
+    with open(txt_file, 'r') as f:
+         ^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '../../fiot_highway2-main/train.txt'

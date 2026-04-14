@@ -1,0 +1,12 @@
+Dataset Summary
+----------------
+Number of features : 1344
+Total samples for train.csv: 2325
+Include Labels     : {7}
+Times              : 15
+Spectogram -> Features
+----------------------
+Pre-processing   : flip_specto, resize_specto
+Augment          : time_mixup_specto
+Feature extract  : mean, mean, std, std, median, median, min, min, max, max, minloc, minloc, maxloc, maxloc
+Normalization    : norm0to1

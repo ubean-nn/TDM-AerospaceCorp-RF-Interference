@@ -1,0 +1,17 @@
+Lmod has detected the following error: The following module(s) are unknown: "modtree/cpu"
+
+Please check the spelling or version number. Also try "module spider ..."
+It is also possible your cache file is out-of-date; it may help to try:
+  $ module --ignore_cache load "modtree/cpu"
+
+Also make sure that all modulefiles written in TCL start with the string #%Module
+
+
+
+/usr/local/lib/python3.12/site-packages/torch/cuda/__init__.py:827: UserWarning: Can't initialize NVML
+  warnings.warn("Can't initialize NVML")
+/usr/local/lib/python3.12/site-packages/torch/cuda/__init__.py:827: UserWarning: Can't initialize NVML
+  warnings.warn("Can't initialize NVML")
+/usr/local/lib/python3.12/site-packages/torch/utils/data/dataloader.py:668: UserWarning: 'pin_memory' argument is set as true but no accelerator is found, then device pinned memory won't be used.
+  warnings.warn(warn_msg)
+[2026-02-02T23:36:55.020] error: *** JOB 15018717 ON a241 CANCELLED AT 2026-02-02T23:36:55 DUE TO TIME LIMIT ***

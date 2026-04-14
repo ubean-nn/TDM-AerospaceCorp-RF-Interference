@@ -1,0 +1,30 @@
+wandb: logging graph, to disable use `wandb.watch(log_graph=False)`
+Traceback (most recent call last):
+  File "/anvil/projects/x-cis220051/corporate/aerospace-rf/tbhat/sbatch/example.py", line 103, in <module>
+    train()
+  File "/anvil/projects/x-cis220051/corporate/aerospace-rf/tbhat/sbatch/example.py", line 59, in train
+    trainer.fit(model, datamodule=dmodule)
+  File "/usr/local/lib/python3.12/site-packages/lightning/pytorch/trainer/trainer.py", line 560, in fit
+    call._call_and_handle_interrupt(
+  File "/usr/local/lib/python3.12/site-packages/lightning/pytorch/trainer/call.py", line 49, in _call_and_handle_interrupt
+    return trainer_fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/lightning/pytorch/trainer/trainer.py", line 598, in _fit_impl
+    self._run(model, ckpt_path=ckpt_path)
+  File "/usr/local/lib/python3.12/site-packages/lightning/pytorch/trainer/trainer.py", line 973, in _run
+    call._call_setup_hook(self)  # allow user to set up LightningModule in accelerator environment
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/lightning/pytorch/trainer/call.py", line 108, in _call_setup_hook
+    _call_lightning_datamodule_hook(trainer, "setup", stage=fn)
+  File "/usr/local/lib/python3.12/site-packages/lightning/pytorch/trainer/call.py", line 199, in _call_lightning_datamodule_hook
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/x-tbhat/.local/lib/python3.12/site-packages/radiomana/datasets.py", line 129, in setup
+    data_train = Highway2Dataset(
+                 ^^^^^^^^^^^^^^^^
+  File "/home/x-tbhat/.local/lib/python3.12/site-packages/radiomana/datasets.py", line 47, in __init__
+    self.root_dir = get_dataset_path(root_dir)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/x-tbhat/.local/lib/python3.12/site-packages/radiomana/datasets.py", line 27, in get_dataset_path
+    raise ValueError(
+ValueError: Environment variable DSET_FIOT_HIGHWAY2 is not set. Please clone the dataset from https://gitlab.cc-asp.fraunhofer.de/darcy_gnss/fiot_highway2 and set the environment variable accordingly.

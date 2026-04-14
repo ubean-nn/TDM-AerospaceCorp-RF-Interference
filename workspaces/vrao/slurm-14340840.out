@@ -1,0 +1,12 @@
+Lmod has detected the following error: The following module(s) are unknown: "modtree/cpu"
+
+Please check the spelling or version number. Also try "module spider ..."
+It is also possible your cache file is out-of-date; it may help to try:
+  $ module --ignore_cache load "modtree/cpu"
+
+Also make sure that all modulefiles written in TCL start with the string #%Module
+
+
+
+/var/spool/slurm/job14340840/slurm_script: line 17: 716531 Killed                  python3 test3.py
+slurmstepd: error: Detected 1 oom_kill event in StepId=14340840.batch. Some of the step tasks have been OOM Killed.

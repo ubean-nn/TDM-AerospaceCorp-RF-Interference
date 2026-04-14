@@ -1,0 +1,10 @@
+conv_channels:
+- 16
+- 32
+- 64
+num_classes: 3
+lr: 0.001
+img_size:
+- 128
+- 128
+linear_width: 128

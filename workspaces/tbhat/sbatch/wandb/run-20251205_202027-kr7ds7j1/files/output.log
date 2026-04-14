@@ -1,0 +1,94 @@
+wandb: logging graph, to disable use `wandb.watch(log_graph=False)`
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+┏━━━┳━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━┳━━━━━━━┓
+┃   ┃ Name           ┃ Type                      ┃ Params ┃ Mode  ┃
+┡━━━╇━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━╇━━━━━━━┩
+│ 0 │ features       │ Sequential                │  141 K │ train │
+│ 1 │ classifier     │ Sequential                │ 34.1 K │ train │
+│ 2 │ acc_metric     │ MulticlassAccuracy        │      0 │ train │
+│ 3 │ f1_metric      │ MulticlassF1Score         │      0 │ train │
+│ 4 │ confmat_metric │ MulticlassConfusionMatrix │      0 │ train │
+└───┴────────────────┴───────────────────────────┴────────┴───────┘
+Trainable params: 175 K
+Non-trainable params: 0
+Total params: 175 K
+Total estimated model params size (MB): 0
+Modules in train mode: 22
+Modules in eval mode: 0
+SLURM auto-requeueing enabled. Setting signal handlers.
+
+
+CRITICAL ERROR DURING TRAINING: Given groups=1, weight of size [64, 2, 7], expected input[32, 512, 243] to have 2 channels, but got 512 channels instead
+Traceback (most recent call last):
+  File "/anvil/projects/x-cis220051/corporate/aerospace-rf/tbhat/sbatch/training.py", line 224, in <module>
+    train()
+  File "/anvil/projects/x-cis220051/corporate/aerospace-rf/tbhat/sbatch/training.py", line 181, in train
+    trainer.fit(model, datamodule=dmodule)
+  File "/usr/local/lib/python3.12/site-packages/lightning/pytorch/trainer/trainer.py", line 560, in fit
+    call._call_and_handle_interrupt(
+  File "/usr/local/lib/python3.12/site-packages/lightning/pytorch/trainer/call.py", line 49, in _call_and_handle_interrupt
+    return trainer_fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/lightning/pytorch/trainer/trainer.py", line 598, in _fit_impl
+    self._run(model, ckpt_path=ckpt_path)
+  File "/usr/local/lib/python3.12/site-packages/lightning/pytorch/trainer/trainer.py", line 1011, in _run
+    results = self._run_stage()
+              ^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/lightning/pytorch/trainer/trainer.py", line 1053, in _run_stage
+    self._run_sanity_check()
+  File "/usr/local/lib/python3.12/site-packages/lightning/pytorch/trainer/trainer.py", line 1082, in _run_sanity_check
+    val_loop.run()
+  File "/usr/local/lib/python3.12/site-packages/lightning/pytorch/loops/utilities.py", line 179, in _decorator
+    return loop_run(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/lightning/pytorch/loops/evaluation_loop.py", line 145, in run
+    self._evaluation_step(batch, batch_idx, dataloader_idx, dataloader_iter)
+  File "/usr/local/lib/python3.12/site-packages/lightning/pytorch/loops/evaluation_loop.py", line 437, in _evaluation_step
+    output = call._call_strategy_hook(trainer, hook_name, *step_args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/lightning/pytorch/trainer/call.py", line 329, in _call_strategy_hook
+    output = fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/lightning/pytorch/strategies/strategy.py", line 412, in validation_step
+    return self.lightning_module.validation_step(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/anvil/projects/x-cis220051/corporate/aerospace-rf/tbhat/sbatch/training.py", line 75, in validation_step
+    logits = self(x)
+             ^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1881, in _call_impl
+    return inner()
+           ^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1829, in inner
+    result = forward_call(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/anvil/projects/x-cis220051/corporate/aerospace-rf/tbhat/sbatch/training.py", line 61, in forward
+    x = self.features(x)
+        ^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/torch/nn/modules/container.py", line 250, in forward
+    input = module(input)
+            ^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1881, in _call_impl
+    return inner()
+           ^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1829, in inner
+    result = forward_call(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/torch/nn/modules/conv.py", line 371, in forward
+    return self._conv_forward(input, self.weight, self.bias)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/torch/nn/modules/conv.py", line 366, in _conv_forward
+    return F.conv1d(
+           ^^^^^^^^^
+RuntimeError: Given groups=1, weight of size [64, 2, 7], expected input[32, 512, 243] to have 2 channels, but got 512 channels instead

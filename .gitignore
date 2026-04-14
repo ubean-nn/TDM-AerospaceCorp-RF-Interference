@@ -1,0 +1,13 @@
+
+# Ignore large datasets, models, and binaries
+*.csv
+*.pt
+*.pth
+*.npy
+*.ckpt
+*.wandb
+*.zip
+*.mp4
+*.pdf
+.DS_Store
+__pycache__/
