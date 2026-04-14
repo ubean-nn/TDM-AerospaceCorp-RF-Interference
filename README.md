@@ -34,6 +34,7 @@ The objective of this project was to understand GNSS jamming and automate the de
 ### 2.2 Scope
 
 The project involved treating RF signal classification as a multi-class image classification problem. The team processed Power Spectral Density (PSD) matrices through a preprocessing pipeline (normalization, downsampling, and resizing to 224x224). Instead of a single model, we trained multiple architectures—including Convolutional Neural Networks (CNNs), Vision Transformers (ViT), and Audio Spectrogram Transformers (AST) using PyTorch Lightning—and aggregated them into an ensemble using majority voting.
+
 ---
 
 ### 2.3 Outcome
