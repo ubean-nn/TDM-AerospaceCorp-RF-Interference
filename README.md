@@ -120,12 +120,7 @@ To address the data imbalance, we utilized SMOTE to generate fake samples for mi
 
 ### 4.3 Lessons Learned
 
-**What to write:** Describe key lessons gained from the project. Focus on insights that could help future teams. Consider what the team would do differently if starting over. Examples include:
-
-- Recommendations for managing data earlier in the project
-- Suggestions for improving collaboration or communication
-- Technical insights discovered during the project
-- Approaches that proved particularly effective
+One major lesson we learned was that data preprocessing is just as important as the model's architecture itself. Since the RF interference data was large, noisy, and imbalanced, the way we normalized, downsampled, resized, and organized the PSD matrices had a major impact on model performance. As a result, we highly reocommend future teams to take significant time to understand the data as much as possible before devling head first into making a model. Additionally, we also learned that every model architecture has its own strengths and weaknesses. Thus, we found that an ensemble approach would not only be more holistic but also more representative of each one of ours' work. 
 
 ---
 
