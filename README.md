@@ -57,41 +57,31 @@ Documents the final outputs produced by the team. Focus on the **most important 
 
 ### 3.1 Final Deliverables
 
-**What to write:** List the main artifacts developed by your team. Examples include:
-
-- Analytical or machine learning models
-- Dashboards or visualization tools (e.g., Power BI, Tableau)
-- Code repositories, scripts, notebooks, or applications
+- Model training scripts
+- Visualization tools
+- Code repositories, scripts and notebooks
 - Technical documentation or setup guides
-- Research reports or analytical summaries
+- No model weights since they are too large for github
 
 ---
 
 ### 3.2 Code Repository
 
-**What to write:** Provide the link to the repository containing project code (e.g., GitHub, GitLab, or Purdue Data Mine repository). Ensure the repository is organized so future teams can understand and use the code.
+This repo conatins all of our source code and model training scripts
 
-> **Example:**
-> `https://github.com/TheDataMine/project-team-name`
+> `[https://github.com/ubean-nn/TDM-AerospaceCorp-RF-Interference](https://github.com/ubean-nn/TDM-AerospaceCorp-RF-Interference)`
 
 ---
 
 ### 3.3 Data & Reports Location
 
-**What to write:** Provide the location of datasets, dashboards, reports, or analytical outputs. Use an approved storage platform (e.g., SharePoint, Box, Google Drive).
-
-> **Example:**
-> All processed datasets and final reports are stored in the team SharePoint folder: `[SharePoint link]`
+> All datasets can be found here: `https://gitlab.cc-asp.fraunhofer.de/darcy_gnss/fiot_highway2`
 
 ---
 
 ### 3.4 Documentation
 
-**What to write:** Provide links to documentation that explains the project — README files, technical documentation, or setup instructions — so future teams or corporate partners can understand and build on the work.
-
-> **Example:**
-> - README: `https://github.com/TheDataMine/project-team-name/blob/main/README.md`
-> - Setup Guide: `https://github.com/TheDataMine/project-team-name/blob/main/docs/setup.md`
+Techincal documentation is located in all README's throught the repos workspace
 
 ---
 
