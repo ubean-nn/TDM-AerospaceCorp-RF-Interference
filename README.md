@@ -39,7 +39,7 @@ The project involved treating RF signal classification as a multi-class image cl
 
 ### 2.3 Outcome
 
-We developed multiple distinct ML pipelines and successfully constructed an optimized 11-model ensemble. The models learned to independently evaluate processed PSD matrices to output a predicted interference class. Our total ensemble achieved a test set accuracy of 76.91%.
+We developed multiple distinct ML pipelines and successfully constructed an optimized 11-model ensemble. The models learned to independently evaluate processed PSD matrices to output a predicted interference class. An earlier 11-model configuration reached about **75.42%** test accuracy; after further tuning, the ensemble reached **76.91%** on the test set.
 
 ---
 
@@ -67,7 +67,7 @@ Documents the final outputs produced by the team. Focus on the **most important 
 
 ### 3.2 Code Repository
 
-This repo conatins all of our source code and model training scripts
+This repo contains all of our source code and model training scripts
 
 > `[https://github.com/ubean-nn/TDM-AerospaceCorp-RF-Interference](https://github.com/ubean-nn/TDM-AerospaceCorp-RF-Interference)`
 
@@ -81,19 +81,13 @@ This repo conatins all of our source code and model training scripts
 
 ### 3.4 Documentation
 
-Techincal documentation is located in all README's throught the repos workspace
+Technical documentation is in the READMEs under `workspaces/`; a short model overview is in `workspaces/model-arch.md`.
 
 ---
 
 ### 3.5 Achievements
 
-**What to write:** Highlight the most important accomplishments. Focus on results or progress, with measurable improvements or insights where possible. Examples include:
-
-- Improvement in model accuracy or analytical performance
-- Development of a working prototype or proof of concept
-- Integration of multiple data sources
-- Automation of a previously manual process
-- Insights that support better decision-making
+We built an 11-model ensemble (majority voting) and improved test accuracy from about **75.42%** to **76.91%** after optimization; individual member models spanned a wide range of performance, which motivated combining them. We reported **accuracy and F1** (and related evaluation) on the 9-class task, and we delivered end-to-end training from PSD / spectrogram inputs through **PyTorch Lightning**, using the project’s data tooling (e.g. `Highway2Dataset` and the shared workspace layout).
 
 ---
 
@@ -105,22 +99,21 @@ Reflects on the project experience and documents insights for future teams. Focu
 
 The primary challenges were the sheer volume and complexity of the raw RF spectrum data and the severe imbalance in the Highway2 GNSS Jamming Dataset.
 
-- Limited or inconsistent data availability
-- Unexpected technical difficulties or model performance issues
-- Integration challenges between tools or systems
-- Coordination or communication challenges within the team or with the corporate partner
+- **Class imbalance** made single metrics and per-class performance uneven across the nine labels.
+- **Model variance:** individual architectures and training runs differed widely in accuracy, complicating reliance on any one model.
+- **Preprocessing sensitivity:** choices in normalization, downsampling, and resizing had an outsized effect on results given the noise and size of the data.
 
 ---
 
 ### 4.2 Mitigation Strategies or Resolutions
 
-To address the data imbalance, we utilized SMOTE to generate fake samples for minority classes and implemented Weighted/Focal Loss during training. To address variations in model reliability, rather than relying on a single architecture, we employed an ensemble approach with majority voting, which made weaker models significantly stronger when aggregated. Computation speed was managed by training models using GPU resources which we found to be fastest at night when the demand were low and queue was short.
+To address the data imbalance, we utilized SMOTE to generate fake samples for minority classes and implemented Weighted/Focal Loss during training. To address variations in model reliability, rather than relying on a single architecture, we employed an ensemble approach with majority voting, which made weaker models significantly stronger when aggregated. Computation speed was managed by training models using GPU resources which we found to be fastest at night when demand was low and the queue was short.
 
 ---
 
 ### 4.3 Lessons Learned
 
-One major lesson we learned was that data preprocessing is just as important as the model's architecture itself. Since the RF interference data was large, noisy, and imbalanced, the way we normalized, downsampled, resized, and organized the PSD matrices had a major impact on model performance. As a result, we highly reocommend future teams to take significant time to understand the data as much as possible before devling head first into making a model. Additionally, we also learned that every model architecture has its own strengths and weaknesses. Thus, we found that an ensemble approach would not only be more holistic but also more representative of each one of ours' work. 
+One major lesson we learned was that data preprocessing is just as important as the model's architecture itself. Since the RF interference data was large, noisy, and imbalanced, the way we normalized, downsampled, resized, and organized the PSD matrices had a major impact on model performance. As a result, we highly recommend future teams to take significant time to understand the data as much as possible before diving head first into making a model. Additionally, we also learned that every model architecture has its own strengths and weaknesses. Thus, we found that an ensemble approach would not only be more holistic but also more representative of each one of ours' work. 
 
 ---
 
@@ -130,11 +123,7 @@ Summarizes how the project is concluded and how results may be continued in the 
 
 ### 5.1 Handover Summary
 
-**What to write:** Briefly describe how final results, deliverables, and documentation were shared with mentor(s). Examples include:
-
-- Final presentation or demonstration to mentors
-- Walkthrough of the repository or documentation
-- Confirmation that mentor(s) can access all project materials
+We shared the GitHub repository, this closure document, and the `workspaces/` documentation (including per-area READMEs) for mentor and partner follow-up. A project poster summarized methodology, individual model results, and ensemble metrics for presentations to stakeholders and The Data Mine.
 
 ---
 
